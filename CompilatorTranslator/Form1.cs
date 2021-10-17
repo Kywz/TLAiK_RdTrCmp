@@ -15,9 +15,8 @@ namespace TranslatorCompilator
     public partial class Form1 : Form
     {
         // место для переменных 
-        string path = @"C:\Users\Asus\Desktop\AnalizLecksicheskiq\inichializate.txt";
-        //public static string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Peremennie.mdb;";
-        public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:/Users/Kywz/Desktop/5 Семестр/Теорія синтакс. аналізу і компіляц/CompilatorTranslator/exampleFuncDataset.accdb;";
+        //string path = @"C:\Users\Asus\Desktop\AnalizLecksicheskiq\inichializate.txt";
+        public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:/Users/Kywz/Desktop/5 Семестр/Теорія синтакс. аналізу і компіляц/RdTrCmp/CompilatorTranslator/exampleFuncDataset.accdb;";
         bool import_fromDataBase = true;
         public HashTable tableInitializationHash;
         // поле - ссылка на экземпляр класса OleDbConnection для соединения с БД
@@ -90,10 +89,11 @@ namespace TranslatorCompilator
             dbImport.ShowDialog();
         }
 
-        //при закритии формы переводим все в базу данных
+        //при закрытии формы переводим все в базу данных
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(dataGridView1.RowCount - 1 != 0 && import_fromDataBase == false)
+            //сохранение БД на закрытие формы
+           /* if(dataGridView1.RowCount - 1 != 0 && import_fromDataBase == false)
             {
                 //Очищаем базу данных перед записью
                 string query = "DELETE * FROM examplaryDataSet";
@@ -116,9 +116,11 @@ namespace TranslatorCompilator
                 }
             }
 
+           */ 
+            
             myConnection.Close();
         }
-
+           
         //Кнопка для удаления строк с таблицы
         private void button3_Click(object sender, EventArgs e)
         {
