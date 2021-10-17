@@ -40,7 +40,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -49,8 +52,6 @@
             this.зберегтиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.зберегтиInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.зберегтиOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(570, 473);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -131,10 +133,12 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Імпортувати демо-файл";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(570, 508);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -142,10 +146,12 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Додати запис";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_addObjectToTable);
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(570, 543);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
@@ -153,10 +159,12 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Видалити запис";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button3);
@@ -166,6 +174,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1211, 619);
             this.panel1.TabIndex = 4;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(572, 580);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(89, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Debug-меню";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_Debug);
             // 
             // panel2
             // 
@@ -177,6 +196,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1205, 454);
             this.panel2.TabIndex = 4;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(511, 83);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(175, 65);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Очистити записи";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_ClearTextBox);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(511, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(175, 65);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Сканувати";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_scanner);
             // 
             // richTextBox2
             // 
@@ -206,7 +245,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -246,41 +285,24 @@
             this.зберегтиOutputToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.зберегтиOutputToolStripMenuItem.Text = "Зберегти \"Output\"";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(511, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 65);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Сканувати";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(511, 83);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(175, 65);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Очистити записи";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 667);
+            this.ClientSize = new System.Drawing.Size(1234, 671);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(810, 396);
+            this.MinimumSize = new System.Drawing.Size(1250, 710);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "TranslatorCompilator";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -312,6 +334,7 @@
         private System.Windows.Forms.ToolStripMenuItem зберегтиOutputToolStripMenuItem;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

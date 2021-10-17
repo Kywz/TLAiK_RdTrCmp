@@ -13,13 +13,13 @@ namespace TranslatorCompilator
     public partial class Form2 : Form
     {
         Form1 mainForm;
-        int i = 0;
+        int RowCount = 0;
 
         public Form2(Form1 thisMainForm)
         {
             this.mainForm = thisMainForm;
-            i = this.mainForm.dataGridView1.RowCount;
-            i--;
+            RowCount = this.mainForm.dataGridView1.RowCount;
+            RowCount--;
             InitializeComponent();
         }
 
@@ -45,14 +45,14 @@ namespace TranslatorCompilator
                         numberOfVars++;
                     }
                 }
-                mainForm.dataGridView1.Rows[i].Cells[0].Value = hex;
-                mainForm.dataGridView1.Rows[i].Cells[1].Value = textBox1.Text;
-                mainForm.dataGridView1.Rows[i].Cells[2].Value = numberOfVars;
-                mainForm.dataGridView1.Rows[i].Cells[3].Value = comboBox1.Text;
-                mainForm.dataGridView1.Rows[i].Cells[4].Value = textBox2.Text;
-                mainForm.dataGridView1.Rows[i].Cells[5].Value = comboBox1.Text + " " + textBox1.Text + " (" + textBox3.Text + ")";
+                mainForm.dataGridView1.Rows[RowCount].Cells[0].Value = hex;
+                mainForm.dataGridView1.Rows[RowCount].Cells[1].Value = textBox1.Text;
+                mainForm.dataGridView1.Rows[RowCount].Cells[2].Value = numberOfVars;
+                mainForm.dataGridView1.Rows[RowCount].Cells[3].Value = comboBox1.Text;
+                mainForm.dataGridView1.Rows[RowCount].Cells[4].Value = textBox2.Text;
+                mainForm.dataGridView1.Rows[RowCount].Cells[5].Value = comboBox1.Text + " " + textBox1.Text + " (" + textBox3.Text + ")";
 
-                i++;
+                RowCount++;
             }
         }
 

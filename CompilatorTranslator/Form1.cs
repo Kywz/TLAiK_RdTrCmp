@@ -21,7 +21,7 @@ namespace TranslatorCompilator
         public HashTable tableInitializationHash;
         // поле - ссылка на экземпляр класса OleDbConnection для соединения с БД
         private OleDbConnection myConnection;
-
+        Scanner scannerForCode = new Scanner();
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace TranslatorCompilator
         {
            if(import_fromDataBase)
             {
-                import_fromDataBase = false;
+                //import_fromDataBase = false;
                 string query = "SELECT [hash], [funcName], [varNumb], [returnType], [funcCallsNum], [initialization] FROM examplaryDataSet;";
 
                 // создаем объект OleDbCommand для выполнения запроса к БД MS Access
@@ -83,7 +83,7 @@ namespace TranslatorCompilator
         }
 
         //вызов формы для добавления
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_addObjectToTable(object sender, EventArgs e)
         {
             Form2 dbImport = new Form2(this);
             dbImport.ShowDialog();
@@ -128,6 +128,48 @@ namespace TranslatorCompilator
             form3.ShowDialog();
         }
 
+        private void button5_Click_ClearTextBox(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            richTextBox2.Clear();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+        }
+
+        private void button4_Click_scanner(object sender, EventArgs e)
+        {
+            richTextBox2.Clear();
+            for (int lineCounter = 0; lineCounter < richTextBox1.Lines.Count(); lineCounter++)
+            {
+                richTextBox2.AppendText(scannerForCode.scannerMainAlgorith(richTextBox1.Lines[lineCounter]) + "\n");//scannerForCode.scannerMainAlgorith(richTextBox1.Lines[lineCounter]); //Lines[richTextBox2.Lines.Count()]
+            }
+
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+
+        }
+
+        private void checkBox1_CheckedChanged_Debug(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                button1.Enabled = true;
+                button1.Visible = true;
+                button2.Enabled = true;
+                button2.Visible = true;
+                button3.Enabled = true;
+                button3.Visible = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button1.Visible = false;
+                button2.Enabled = false;
+                button2.Visible = false;
+                button3.Enabled = false;
+                button3.Visible = false;
+            }
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
