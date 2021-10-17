@@ -1,0 +1,12 @@
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\bin\Debug\AnalizLecksicheskiq.exe.config
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\bin\Debug\AnalizLecksicheskiq.exe
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\bin\Debug\AnalizLecksicheskiq.pdb
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.Form1.resources
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.Properties.Resources.resources
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.exe
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.pdb
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.Form2.resources
+C:\Users\Asus\Desktop\AnalizLecksicheskiq\obj\Debug\AnalizLecksicheskiq.Form3.resources

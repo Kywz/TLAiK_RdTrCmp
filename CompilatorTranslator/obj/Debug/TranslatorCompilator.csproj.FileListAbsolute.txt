@@ -1,0 +1,12 @@
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.csprojAssemblyReference.cache
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.csproj.GenerateResource.cache
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.csproj.CoreCompileInputs.cache
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\bin\Debug\TranslatorCompilator.exe.config
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\bin\Debug\TranslatorCompilator.exe
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\bin\Debug\TranslatorCompilator.pdb
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.Properties.Resources.resources
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.exe
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.pdb
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.Form1.resources
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.Form2.resources
+C:\Users\Kywz\Desktop\5 Семестр\Теорія синтакс. аналізу і компіляц\CompilatorTranslator\obj\Debug\TranslatorCompilator.Form3.resources
