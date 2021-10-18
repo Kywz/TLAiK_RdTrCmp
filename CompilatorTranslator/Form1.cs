@@ -139,13 +139,50 @@ namespace TranslatorCompilator
         private void button4_Click_scanner(object sender, EventArgs e)
         {
             richTextBox2.Clear();
+            string bufferString;
+            int[] bufferArray = new int[3];
+            int bufferInt = 0;
+            int hex = 0;
             for (int lineCounter = 0; lineCounter < richTextBox1.Lines.Count(); lineCounter++)
             {
-                richTextBox2.AppendText(scannerForCode.scannerMainAlgorith(richTextBox1.Lines[lineCounter]) + "\n");//scannerForCode.scannerMainAlgorith(richTextBox1.Lines[lineCounter]); //Lines[richTextBox2.Lines.Count()]
+                bufferInt = 0;
+                bufferString = scannerForCode.scannerMainAlgorith(richTextBox1.Lines[lineCounter]);
+                richTextBox2.AppendText(bufferString + "\n");//scannerForCode.scannerMainAlgorith(richTextBox1.Lines[lineCounter]); //Lines[richTextBox2.Lines.Count()]
+                for (int charCounter = 0; charCounter < bufferString.Length; charCounter++)
+                {
+                    if (bufferString[charCounter] == ':')
+                    {
+                        bufferArray[bufferInt] = charCounter;
+                        bufferInt++;
+                    }
+                }
+
+
+                /* Добавление записи в таблицу */
+                //if (bufferString[bufferString.Length - 1] == 'I')
+                //{
+                /*dataGridView1.Rows.Add();
+
+                tableInitializationHash.Insert(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1), bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
+                    //hex = tableInitializationHash.Search(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = hex;
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1].Value = bufferString.Substring(bufferArray[0]+1, bufferArray[1] - bufferArray[0]-1);
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[2].Value = bufferString.Substring(bufferArray[1]+1, bufferArray[2] - bufferArray[1]-1);
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[3].Value = bufferString.Substring(0, bufferArray[0]);
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4].Value = 0;
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[5].Value = richTextBox1.Lines[lineCounter];
+                */
+                //}
+                /* Добавление каунта в нэйм */
+                //else if (bufferString[bufferString.Length-1] == 'C')
+                //{
+                //bla bla bla
+                //}
+
             }
 
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
+            //dataGridView1.Rows.Clear();
+            //dataGridView1.Refresh();
 
         }
 
