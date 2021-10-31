@@ -49,9 +49,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.імпортуватиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.зберегтиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.зберегтиInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.зберегтиOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,6 +57,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -252,8 +250,7 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.імпортуватиToolStripMenuItem,
-            this.зберегтиЗаписToolStripMenuItem});
+            this.імпортуватиToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -261,29 +258,9 @@
             // імпортуватиToolStripMenuItem
             // 
             this.імпортуватиToolStripMenuItem.Name = "імпортуватиToolStripMenuItem";
-            this.імпортуватиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.імпортуватиToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.імпортуватиToolStripMenuItem.Text = "Імпортувати запис";
-            // 
-            // зберегтиЗаписToolStripMenuItem
-            // 
-            this.зберегтиЗаписToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.зберегтиInputToolStripMenuItem,
-            this.зберегтиOutputToolStripMenuItem});
-            this.зберегтиЗаписToolStripMenuItem.Name = "зберегтиЗаписToolStripMenuItem";
-            this.зберегтиЗаписToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.зберегтиЗаписToolStripMenuItem.Text = "Зберегти запис";
-            // 
-            // зберегтиInputToolStripMenuItem
-            // 
-            this.зберегтиInputToolStripMenuItem.Name = "зберегтиInputToolStripMenuItem";
-            this.зберегтиInputToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.зберегтиInputToolStripMenuItem.Text = "Зберегти \"Input\"";
-            // 
-            // зберегтиOutputToolStripMenuItem
-            // 
-            this.зберегтиOutputToolStripMenuItem.Name = "зберегтиOutputToolStripMenuItem";
-            this.зберегтиOutputToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.зберегтиOutputToolStripMenuItem.Text = "Зберегти \"Output\"";
+            this.імпортуватиToolStripMenuItem.Click += new System.EventHandler(this.імпортуватиToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -329,9 +306,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem імпортуватиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem зберегтиЗаписToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem зберегтиInputToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem зберегтиOutputToolStripMenuItem;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox1;

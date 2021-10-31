@@ -8,14 +8,13 @@ using System.Windows.Forms;
 
 namespace TranslatorCompilator
 {
-    //@TODO Сделать проверку на скобки (не работает) Est'
-    //Загрузка/сохранение кода через менюстрип
+    //@TODO Сделать проверку на скобки (не работает) READY
+    //Загрузка/сохранение кода через менюстрип READY
     //Добавление значений в таблицу 
 
     class Scanner
     {
-        public string scannerMainAlgorith(string currentLine)
-        {
+        public string scannerMainAlgorith(string currentLine) {
             currentLine = currentLine.Trim();
             string returnLine;
             int counterOneForCycles = 0;
@@ -24,7 +23,7 @@ namespace TranslatorCompilator
 
 
 
-            //Цикл на поиск типа данных //POMEN'AT MESTA
+            //Цикл на поиск типа данных
             if (currentLine.Length <= 5)
             {
                 return "NaF"; // NaF - not a function
@@ -49,7 +48,7 @@ namespace TranslatorCompilator
                     return "NaF";
                 }
                 
-                if (currentLine.Substring(0, 4).Equals("else") || currentLine.Substring(0, 7).Equals("foreach"))
+                if (currentLine.Substring(0, 4).Equals("else") || currentLine.Substring(0, 7).Equals("foreach") || currentLine.Substring(0, 6).Equals("public"))
                 {
                     return "NaF";
                 }

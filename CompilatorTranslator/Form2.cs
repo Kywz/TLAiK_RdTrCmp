@@ -51,7 +51,7 @@ namespace TranslatorCompilator
                 mainForm.dataGridView1.Rows[RowCount].Cells[3].Value = comboBox1.Text;
                 mainForm.dataGridView1.Rows[RowCount].Cells[4].Value = textBox2.Text;
                 mainForm.dataGridView1.Rows[RowCount].Cells[5].Value = comboBox1.Text + " " + textBox1.Text + " (" + textBox3.Text + ")";
-
+                
                 RowCount++;
             }
         }

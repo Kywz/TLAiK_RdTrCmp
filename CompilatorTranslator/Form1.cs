@@ -4,8 +4,8 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Data.OleDb;
 //using System.Drawing;
-//using System.IO;
 using System.Linq;
+using System.IO;
 //using System.Text;
 //using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -138,6 +138,7 @@ namespace TranslatorCompilator
 
         private void button4_Click_scanner(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
             richTextBox2.Clear();
             string bufferString;
             int[] bufferArray = new int[3];
@@ -157,32 +158,40 @@ namespace TranslatorCompilator
                     }
                 }
 
-
-                /* Добавление записи в таблицу */
-                //if (bufferString[bufferString.Length - 1] == 'I')
-                //{
-                /*dataGridView1.Rows.Add();
-
-                tableInitializationHash.Insert(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1), bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
+                if (String.Equals("NaF", bufferString) == false)
+                {
+                    /* Добавление записи в таблицу */
+                    //tableInitializationHash.Insert(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1), bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
                     //hex = tableInitializationHash.Search(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = hex;
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1].Value = bufferString.Substring(bufferArray[0]+1, bufferArray[1] - bufferArray[0]-1);
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[2].Value = bufferString.Substring(bufferArray[1]+1, bufferArray[2] - bufferArray[1]-1);
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[3].Value = bufferString.Substring(0, bufferArray[0]);
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4].Value = 0;
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[5].Value = richTextBox1.Lines[lineCounter];
-                */
-                //}
-                /* Добавление каунта в нэйм */
-                //else if (bufferString[bufferString.Length-1] == 'C')
-                //{
-                //bla bla bla
-                //}
+                    if (bufferString[bufferString.Length - 1] == 'I')
+                    {
+                        dataGridView1.Rows.Add();
 
+                        tableInitializationHash.Insert(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1), bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
+                        hex = tableInitializationHash.Search(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = hex;
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1].Value = bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1);
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[2].Value = bufferString.Substring(bufferArray[1] + 1, bufferArray[2] - bufferArray[1] - 1);
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[3].Value = bufferString.Substring(0, bufferArray[0]);
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4].Value = 0;
+                        dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[5].Value = richTextBox1.Lines[lineCounter];
+
+                    }
+                    /* Добавление каунта в нэйм */
+                    else if (bufferString[bufferString.Length - 1] == 'C')
+                    {
+                        hex = tableInitializationHash.Search(bufferString.Substring(bufferArray[0] + 1, bufferArray[1] - bufferArray[0] - 1));
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            if (Int32.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString()) == hex)
+                            {
+                                dataGridView1.Rows[i].Cells[4].Value = Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()) + 1;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
-
-            //dataGridView1.Rows.Clear();
-            //dataGridView1.Refresh();
 
         }
 
@@ -205,6 +214,16 @@ namespace TranslatorCompilator
                 button2.Visible = false;
                 button3.Enabled = false;
                 button3.Visible = false;
+            }
+        }
+
+        private void імпортуватиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OPF = new OpenFileDialog();
+            OPF.Filter = "Файлы txt|*.txt|Файлы cs|*.cs";
+            if (OPF.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.Text = File.ReadAllText(OPF.FileName);
             }
         }
     }
